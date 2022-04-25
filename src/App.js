@@ -1,6 +1,6 @@
 import './App.css';
 import React, {useState, useEffect} from 'react';
-
+import { RiCalendarEventFill } from 'react-icons/ri';
 function App() {
 
   const [articles, setArticles] = useState([]);
@@ -28,9 +28,9 @@ function App() {
             const {title, abstract, byline, updated, url} = article;
             return (
               <article key={article.id}>
-                <a href={article.url} target="_blank"><h2>{article.title}</h2></a>
-                <span>{article.abstract}</span>
-                <h6>{article.updated}</h6>
+                <a href={article.url}><h4>{article.title}</h4></a>
+                {/* <span>{article.abstract}</span><br/><br/> */}
+                <div>{article.byline} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<RiCalendarEventFill /> {article.updated.slice(0,10)}</div>
               </article> 
             )
         })}
